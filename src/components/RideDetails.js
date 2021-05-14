@@ -11,6 +11,7 @@ class RideDetails extends React.Component {
         time: '',
         description: '',
         theUser: '',
+        theUserId: '',
         user: ''
     }
 
@@ -27,6 +28,7 @@ class RideDetails extends React.Component {
                 time: response.data.time,
                 description: response.data.description,
                 theUser: response.data.user,
+                // theUserId: response.data.user._id,
                 user: this.props.user.username
             });
         } else {
@@ -38,9 +40,11 @@ class RideDetails extends React.Component {
                 time: response.data.time,
                 description: response.data.description,
                 theUser: response.data.user,
+                // theUserId: response.data.user._id,
                 user: 'not logged in'
             });
         }
+        console.log(this.state.theUser)
     }
 
     handleDeleteRide = async (id) => {
@@ -49,12 +53,12 @@ class RideDetails extends React.Component {
     }
 
     render(){
-        const { _id, departure, arrival, date, time, description, theUser } = this.state;
+        const { _id, departure, arrival, date, time, description, theUser, theUserId } = this.state;
         return(
             <>
             <h2> {departure} - {arrival} ({date} - {time}) </h2>
             <h3> {description}  </h3>
-            <h3> user: {theUser}  </h3>
+            <h3> user: <a href={`/users/${theUserId}`}> {theUser} </a></h3>
 
             {this.state.user===this.state.theUser && 
             <>

@@ -2,6 +2,8 @@ import React from 'react';
 import { getAllrides, loggedin } from '../api';
 import { NavLink } from 'react-router-dom';
 
+
+
 class ListRides extends React.Component{
     state={
         rides: [],
@@ -9,6 +11,9 @@ class ListRides extends React.Component{
         searchKeyword:'',
         user: ''
     }
+
+    ///API
+
 
     async componentDidMount(){
         const response = await getAllrides();
