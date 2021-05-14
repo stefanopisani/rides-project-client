@@ -1,14 +1,17 @@
 import './App.css';
-import ListProjects from './components/ListProjects';
 import { Switch, Route } from 'react-router-dom';
-import ProjectDetails from './components/ProjectDetails';
-import AddProject from './components/AddProject';
 import Navbar from './components/Navbar';
-import EditProject from './components/EditProject';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import React from 'react';
 import {loggedin} from './api';
+import ListRides from './components/ListRides';
+import AddRide from './components/AddRide';
+import RideDetails from './components/RideDetails';
+import EditRide from './components/EditRide';
+import UserDetails from './components/UserProfile';
+import EditUser from './components/EditUser';
+import AddReview from './components/AddReview';
 
 class App extends React.Component {
   state= {
@@ -38,16 +41,29 @@ class App extends React.Component {
       <div className="App">
         <Navbar loggedInUser={loggedInUser} setCurrentUser={this.setCurrentUser}/>
         <Switch> 
-          <Route exact path={["/", "/projects"]} component={ListProjects} />
-          <Route exact path="/projects/add" component={AddProject} />
-          <Route exact path="/projects/:id" component={ProjectDetails} />
-          <Route exact path="/projects/:id/edit" component={EditProject} />
+          <Route exact path={["/", "/rides"]} render={(props) => <ListRides {...props} user={loggedInUser}/> } />
+          <Route exact path="/rides/add" render={(props) => <AddRide {...props} user={loggedInUser} />} />
+          <Route exact path="/rides/:id" render={(props) => <RideDetails {...props} user={loggedInUser} />} />
+          <Route exact path="/rides/:id/edit" component={EditRide} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/users/:id" render={(props) => <UserDetails {...props} user={loggedInUser} />} />
+          <Route 
+            exact path="/users/:id/edit" render={(props) => 
+              <EditUser {...props} setCurrentUser={this.setCurrentUser} />}  
+          />
           <Route 
             exact path="/login" render={(props)=>{
               return <Login {...props} setCurrentUser={this.setCurrentUser} />
             }} 
           />
+          <Route exact path="/reviews/:id/add" render={(props) => <AddReview {...props} user={loggedInUser} />} />
+
+          {/* <Route exact path="/login-google" component={
+            ()=> {
+              window.location.href= `${process.env.REACT_APP_PROJECTS_API}/api/auth/google`;
+            }
+          } /> */}
+
         </Switch>
         
       </div>

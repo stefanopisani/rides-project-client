@@ -19,6 +19,7 @@ class Login extends React.Component{
         event.preventDefault();
         const { username, password } = this.state
         const response = await login(username, password);
+        console.log(response.data);
         this.props.setCurrentUser(response.data);
         this.props.history.push('/');
     };
@@ -38,6 +39,7 @@ class Login extends React.Component{
                 Don't have an account?
                 <NavLink to="/signup"> Signup</NavLink>
             </p>
+            
             </>
         )
     }
