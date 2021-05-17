@@ -1,6 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { logout } from '../api';
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 import '../App.css';
 

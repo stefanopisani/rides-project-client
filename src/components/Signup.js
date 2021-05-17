@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { signup, uploadFile } from '../api';
+import { toast } from 'react-toastify';
 
 class Signup extends React.Component{
     state={
@@ -43,35 +44,90 @@ class Signup extends React.Component{
         const {username, password, email, bio, phoneNumber} = this.state;
         return(
             <>
-            <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
-                
-                <label>Username:</label>
-                <input type="text" onChange={this.handleChange} name="username" value={username} required/>
-                
-                <label>Email:</label>
-                <input type="email" onChange={this.handleChange} name="email" value={email} required/>
+            <div class="columns">
+                <div class="column"> </div>
+                <div class="column"> 
+                    <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
+                        <div class="field">
+                            <label class="label">Username</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="text" onChange={this.handleChange} name="username" value={username} placeholder="name"  required/>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                            </div>
+                        </div>
 
-                <label>Phone Number:</label>
-                <input type="number" onChange={this.handleChange} name="phoneNumber" value={phoneNumber} required/>
-                
-                <label>Password:</label>
-                <input type="password" onChange={this.handleChange} name="password" value={password} required/>
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="email" onChange={this.handleChange} name="email" value={email} placeholder="email@"required/>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
+                                    </span> 
+                            </div>
+                        </div>
 
-                <label>Picture</label>
-                <input type="file" onChange={this.handleFileChange} name="imageUrl" required/>
-                
-                <label>Bio:</label>
-                <input type="text" onChange={this.handleChange} name="bio" value={bio} />
-                
-                <button type='submit'>Signup</button>
-            </form>
-            <p>
-                Already have account?
-                <NavLink to="/login"> Login</NavLink>
-            </p>
+                        <div class="field">
+                            <label class="label">Phone Number</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="number" onChange={this.handleChange} name="phoneNumber" value={phoneNumber} placeholder="+351-YOUR-NUMBER" required/>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-phone"></i>
+                                    </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="password" onChange={this.handleChange} name="password" value={password} required/>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-key"></i>
+                                    </span>
+                            </div>
+                        </div>
+
+                        <div class="field mb-5">
+                            <label class="label">Bio</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input" type="text" onChange={this.handleChange} name="bio" value={bio} placeholder="#something about yourself" />
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-comment"></i>
+                                    </span>
+                            </div>
+                        </div>
+
+                        <div class="fle mb-5">
+                            <label class="file-label is-justify-content-center">
+                                <input class="file-input" type="file" onChange={this.handleFileChange} name="imageUrl" required/>
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Profile Picture..
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="field is-grouped is-justify-content-center">
+                            <div class="control">
+                                <button class="button is-primary" type="submit">Sign up</button>
+                                <p class="mt-3">Already have an account? <NavLink to="/login" class="has-text-primary"> Login</NavLink></p>
+                            </div>    
+                        </div>
+                    </form>
+                </div>
+                <div class="column"> </div>
+            </div>    
             </>
         )
     }
 }
 
 export default Signup;
+
+
+

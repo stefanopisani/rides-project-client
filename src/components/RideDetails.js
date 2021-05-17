@@ -1,6 +1,7 @@
 import React from 'react';
 import { deleteRide, getRide } from '../api';
 import { NavLink } from 'react-router-dom';
+import Weather from './Weather';
 
 class RideDetails extends React.Component {
     state = {
@@ -64,9 +65,11 @@ class RideDetails extends React.Component {
             <>
             <button onClick={() => this.handleDeleteRide(_id)}> Delete </button>
             <NavLink exact to={`/rides/${_id}/edit`}> <button> Edit </button> </NavLink>
+            <br/>
+            
             </>
             }
-            
+            <Weather lat={'38.72927824720325'} long={'-9.138576062552916'} />
             </>
         )
     }

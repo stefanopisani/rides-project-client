@@ -12,6 +12,11 @@ import EditRide from './components/EditRide';
 import UserDetails from './components/UserProfile';
 import EditUser from './components/EditUser';
 import AddReview from './components/AddReview';
+import Weather from './components/Weather';
+import Home from './components/Home';
+import PrivatRoute from './components/PrivatRoute';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class App extends React.Component {
   state= {
@@ -39,9 +44,11 @@ class App extends React.Component {
     const{loggedInUser} = this.state;
     return (
       <div className="App">
+        <ToastContainer />
         <Navbar loggedInUser={loggedInUser} setCurrentUser={this.setCurrentUser}/>
         <Switch> 
-          <Route exact path={["/", "/rides"]} render={(props) => <ListRides {...props} user={loggedInUser}/> } />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/rides" render={(props) => <ListRides {...props} user={loggedInUser}/> } />
           <Route exact path="/rides/add" render={(props) => <AddRide {...props} user={loggedInUser} />} />
           <Route exact path="/rides/:id" render={(props) => <RideDetails {...props} user={loggedInUser} />} />
           <Route exact path="/rides/:id/edit" component={EditRide} />
@@ -65,7 +72,6 @@ class App extends React.Component {
           } /> */}
 
         </Switch>
-        
       </div>
     );
   }
