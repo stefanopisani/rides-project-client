@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { login } from '../api';
 import { toast } from 'react-toastify';
+import '../App.css';
+import "bulma/css/bulma.css";
 
 class Login extends React.Component{
     state={
@@ -34,9 +36,9 @@ class Login extends React.Component{
         const {username, password} = this.state;
         return(
             <>
-            <div class="columns">
+            <div class="columns login">
             <div class="column"></div>
-            <div class="column">
+            <div class="column login-form">
             <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
                 <div class="field">
                 <label class="label">Username</label>

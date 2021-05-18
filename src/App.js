@@ -9,12 +9,13 @@ import ListRides from './components/ListRides';
 import AddRide from './components/AddRide';
 import RideDetails from './components/RideDetails';
 import EditRide from './components/EditRide';
-import UserDetails from './components/UserProfile';
+import UserProfile from './components/UserProfile';
 import EditUser from './components/EditUser';
 import AddReview from './components/AddReview';
 import Weather from './components/Weather';
 import Home from './components/Home';
-import PrivatRoute from './components/PrivatRoute';
+import PrivateRoute from './components/PrivatRoute';
+import Footer from './components/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -49,29 +50,17 @@ class App extends React.Component {
         <Switch> 
           <Route exact path="/" component={Home} />
           <Route exact path="/rides" render={(props) => <ListRides {...props} user={loggedInUser}/> } />
-          <Route exact path="/rides/add" render={(props) => <AddRide {...props} user={loggedInUser} />} />
+          <PrivateRoute exact path="/rides/add" render={(props) => <AddRide {...props} user={loggedInUser} />} />
           <Route exact path="/rides/:id" render={(props) => <RideDetails {...props} user={loggedInUser} />} />
-          <Route exact path="/rides/:id/edit" component={EditRide} />
+          <PrivateRoute exact path="/rides/:id/edit" component={EditRide} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/users/:id" render={(props) => <UserDetails {...props} user={loggedInUser} />} />
-          <Route 
-            exact path="/users/:id/edit" render={(props) => 
-              <EditUser {...props} setCurrentUser={this.setCurrentUser} />}  
-          />
-          <Route 
-            exact path="/login" render={(props)=>{
-              return <Login {...props} setCurrentUser={this.setCurrentUser} />
-            }} 
-          />
-          <Route exact path="/reviews/:id/add" render={(props) => <AddReview {...props} user={loggedInUser} />} />
-
-          {/* <Route exact path="/login-google" component={
-            ()=> {
-              window.location.href= `${process.env.REACT_APP_PROJECTS_API}/api/auth/google`;
-            }
-          } /> */}
-
+          <PrivateRoute exact path="/users/:id" render={(props) => <UserProfile {...props} user={loggedInUser} />} />
+          <PrivateRoute exact path="/users/:id/edit" render={(props) => <EditUser {...props} setCurrentUser={this.setCurrentUser} />} />
+          <Route exact path="/login" render={(props)=>{ return <Login {...props} setCurrentUser={this.setCurrentUser} />}} />
+          <PrivateRoute exact path="/reviews/:id/add" render={(props) => <AddReview {...props} user={loggedInUser} />} />
+          {/* <Route exact path="/login-google" component={()=> {window.location.href= `${process.env.REACT_APP_PROJECTS_API}/api/auth/google`;}} /> */}
         </Switch>
+        <Footer />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { loggedin } from "../api";
 import { Route, Redirect } from "react-router-dom";
+import { toast } from "react-toastify";
 //High order component
 class PrivateRoute extends React.Component {
   state = {
@@ -19,13 +20,14 @@ class PrivateRoute extends React.Component {
         isLoading: false,
         isLoggedIn: false,
       });
+      toast.warning('You need to login to proceed❗️❗️❗️')
     }
   }
   render() {
     const { isLoggedIn, isLoading } = this.state;
-    const { path, exact, component } = this.props;
+    const { path, exact, component, render } = this.props;
     return isLoading ? null : isLoggedIn ? (
-      <Route path={path} component={component} exact={exact} />
+      <Route path={path} component={component} exact={exact} render={render}/>
     ) : (
       <Redirect to="/login" />
     );

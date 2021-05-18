@@ -10,7 +10,7 @@ class Signup extends React.Component{
         password: '',
         imageUrl: '',
         bio: '',
-        phoneNumber: 0
+        phoneNumber: ''
     }
 
     handleFileChange = (event) => {
@@ -29,15 +29,18 @@ class Signup extends React.Component{
     handleFormSubmit = async (event) => {
         event.preventDefault();
         const { username, email, password, imageUrl, bio, phoneNumber } = this.state;
-
-        const uploadData = new FormData();
-        uploadData.append("file", imageUrl);
-
-        //Upload Image to our API
-        const response = await uploadFile(uploadData);
-
-        await signup(username, email, password, response.data.fileUrl, bio, phoneNumber);
-        this.props.history.push('/');
+        try{
+            const uploadData = new FormData();
+            uploadData.append("file", imageUrl);
+            //Upload Image to our API
+            const response = await uploadFile(uploadData);
+            await signup(username, email, password, response.data.fileUrl, bio, phoneNumber);
+            this.props.history.push('/');
+            toast('You registered successfully, please log in to start using Rides 🚐 🌊')
+        } catch(e) {
+            toast.error(' An error occurred, please try again')
+            console.log(e);
+        }   
     };
       
     render(){
@@ -62,6 +65,7 @@ class Signup extends React.Component{
                             <label class="label">Email</label>
                             <div class="control has-icons-left has-icons-right">
                                 <input class="input" type="email" onChange={this.handleChange} name="email" value={email} placeholder="email@"required/>
+                                    <p class="help is-grey is-size-7"> ✌🏻 will be shared only inside Ride's community ✉️  </p>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span> 
@@ -72,6 +76,7 @@ class Signup extends React.Component{
                             <label class="label">Phone Number</label>
                             <div class="control has-icons-left has-icons-right">
                                 <input class="input" type="number" onChange={this.handleChange} name="phoneNumber" value={phoneNumber} placeholder="+351-YOUR-NUMBER" required/>
+                                <p class="help is-grey is-size-7"> Same for your number ☎️ </p>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-phone"></i>
                                     </span>

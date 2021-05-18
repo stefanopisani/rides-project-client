@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import { addReview, getUser } from '../api';
 
 class AddReview extends React.Component{
@@ -38,6 +39,7 @@ class AddReview extends React.Component{
         };
         await addReview(user_id, newReview);
         this.props.history.push("/rides");
+        toast('Review added. Thanks for being an active memeber of Rides 🤟🏻 ')
     }
 
     render(){

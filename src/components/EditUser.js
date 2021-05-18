@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 import { updateUser, getUser, uploadFile } from "../api";
 
 class EditUser extends React.Component {
@@ -44,23 +45,29 @@ class EditUser extends React.Component {
     event.preventDefault();
     const { username, email, imageUrl, bio, _id, phoneNumber } = this.state;
     let newImage = '';
+    try{
+        if(typeof imageUrl !== 'string') {
+            const uploadData = new FormData();
+            uploadData.append("file", imageUrl);
+        
+            //Upload Image to our API
+            const response = await uploadFile(uploadData);
+            newImage = response.data.fileUrl
+        } else {
+            newImage = imageUrl
+        }
 
-    if(typeof imageUrl !== 'string') {
-        const uploadData = new FormData();
-        uploadData.append("file", imageUrl);
+        const updatedUser = {username, email, imageUrl: newImage, bio, _id, phoneNumber}
+        const user = await updateUser(updatedUser);
+
+        this.props.setCurrentUser(user.data)
+        this.props.history.push(`/users/${this.state._id}`);
+        toast('✅ Profile edited successfully')
+    } catch(e){
+        toast.error(' An error occurred, please try again')
+        console.log(e);
+    }   
     
-        //Upload Image to our API
-        const response = await uploadFile(uploadData);
-        newImage = response.data.fileUrl
-    } else {
-        newImage = imageUrl
-    }
-
-    const updatedUser = {username, email, imageUrl: newImage, bio, _id, phoneNumber}
-    const user = await updateUser(updatedUser);
-
-    this.props.setCurrentUser(user.data)
-    this.props.history.push(`/users/${this.state._id}`);
   };
 
   render() {

@@ -2,7 +2,7 @@ import React from "react";
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 import '../App.css';
 
-function Weather ({lat, long}) {
+function Weather ({lat, long, location}) {
 
     const { data, isLoading, errorMessage } = useOpenWeather({
         key: '84b45247526fcace7224516a12125e01',
@@ -14,17 +14,26 @@ function Weather ({lat, long}) {
 
       return (
         <>  
+       
+
+       
+
         <div className="ReactWeather">
         <ReactWeather 
+          className="weather" 
           isLoading={isLoading}
           errorMessage={errorMessage}
           data={data}
           lang="en"
-          locationLabel="Lisbon"
+          locationLabel={location}
           unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
           showForecast
         />
         </div>
+
+
+
+        
         </>
 )
 }

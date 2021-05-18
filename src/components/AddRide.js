@@ -12,12 +12,11 @@ class AddRide extends React.Component{
         user: ''
     }
 
-    async componentDidMount() {
-
-        this.setState({
-            user: this.props.user.username
-        });
-      }
+    // async componentDidMount() {
+    //     this.setState({
+    //         user: this.props.user.username
+    //     });
+    //   }
 
     handleChange = (event)=> {
         let { name, value } = event.target;
@@ -44,9 +43,14 @@ class AddRide extends React.Component{
             description,
             user
         };
-        await addRide(newRide);
-        toast.success('Ride added successfully 🤟🏻')
-        this.props.history.push("/rides");
+        try{
+            await addRide(newRide);
+            this.props.history.push("/rides");
+            toast('🌊 Ride added successfully 🤟🏻')
+        } catch(e) {
+            toast.error(' An error occurred, please try again')
+            console.log(e);
+        }   
     }
 
     render(){
@@ -72,7 +76,7 @@ class AddRide extends React.Component{
                 <button type="submit">Create</button>
             </form> */}
 
-            <div class="columns">
+            <div class="columns addRide">
                 <div class="column"> </div>
                 <div class="column"> 
                     <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">

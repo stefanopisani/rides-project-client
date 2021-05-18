@@ -18,7 +18,7 @@ export const deleteRide = (id) => {
 }
 
 export const addRide = (ride) => {
-    return axios.post(`${baseUrl}/rides`, ride);
+    return axios.post(`${baseUrl}/rides`, ride, { withCredentials: true });
 }
 
 export const uploadFile = (uploadData) => {

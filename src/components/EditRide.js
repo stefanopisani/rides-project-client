@@ -1,5 +1,6 @@
 import React from "react";
 import { updateRide, getRide } from "../api";
+import { toast } from 'react-toastify';
 
 class EditRide extends React.Component {
   state = {
@@ -34,8 +35,14 @@ class EditRide extends React.Component {
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
-    await updateRide(this.state);
-    this.props.history.push(`/rides`);
+    try{
+        await updateRide(this.state);
+        this.props.history.push(`/rides`);
+        toast('🌊 Ride edited successfully 🚀')
+    } catch(e){
+        toast.error(' An error occurred, please try again')
+        console.log(e);
+    }   
   };
 
   render() {
