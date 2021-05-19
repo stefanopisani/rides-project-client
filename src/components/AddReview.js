@@ -46,7 +46,7 @@ class AddReview extends React.Component{
         const { comment, rating} = this.state;
         return(
             <>
-            <div class="columns">
+            <div class="columns has-background-primary-light p-6">
                 <div class="column"> </div>
                 <div class="column"> 
                     <form onSubmit={this.handleFormSubmit} > 

@@ -47,9 +47,10 @@ class EditRide extends React.Component {
 
   render() {
     const {departure, arrival, date, time, description} = this.state;
+    const today = new Date().toISOString().split("T")[0];
     return (
         <>
-        <div class="columns">
+        <div class="columns has-background-primary-light p-6">
                 <div class="column"> </div>
                 <div class="column"> 
                     <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
@@ -76,7 +77,7 @@ class EditRide extends React.Component {
                         <div class="field">
                             {/* <label class="label">When</label> */}
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="date" name="date" onChange={this.handleChange} value={date} placeholder="When?" required/>
+                                <input class="input" type="date" name="date" onChange={this.handleChange} value={date} min={today} placeholder="When?" required/>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-calendar-alt"></i>
                                     </span>

@@ -74,7 +74,7 @@ class EditUser extends React.Component {
     const { username, email, bio, phoneNumber} = this.state;
     return (
         <>
-        <div class="columns">
+        <div class="columns has-background-primary-light p-6">
           <div class="column"> </div>
           <div class="column"> 
               <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
@@ -121,10 +121,10 @@ class EditUser extends React.Component {
                   <div class="field mb-5">
                       <label class="label">Bio</label>
                       <div class="control has-icons-left has-icons-right">
-                          <input class="input" type="text" onChange={this.handleChange} name="bio" value={bio} placeholder="#something about yourself" />
-                              <span class="icon is-small is-left">
+                          <textarea class="textarea is-primary" type="text" onChange={this.handleChange} name="bio" value={bio} placeholder="#something about yourself" rows="5" > </textarea>
+                              {/* <span class="icon is-small is-left">
                                   <i class="fas fa-comment"></i>
-                              </span>
+                              </span> */}
                       </div>
                   </div>
 

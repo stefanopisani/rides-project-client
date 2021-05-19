@@ -55,6 +55,7 @@ class AddRide extends React.Component{
 
     render(){
         const {departure, arrival, date, time, description} = this.state;
+        const today = new Date().toISOString().split("T")[0];
         return(
             <>
             {/* <form onSubmit={this.handleFormSubmit} >
@@ -76,7 +77,7 @@ class AddRide extends React.Component{
                 <button type="submit">Create</button>
             </form> */}
 
-            <div class="columns addRide">
+            <div class="columns has-background-primary-light addRide p-6">
                 <div class="column"> </div>
                 <div class="column"> 
                     <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
@@ -103,7 +104,7 @@ class AddRide extends React.Component{
                         <div class="field">
                             {/* <label class="label">When</label> */}
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="date" name="date" onChange={this.handleChange} value={date} placeholder="When?" required/>
+                                <input class="input" type="date" name="date" onChange={this.handleChange} value={date} placeholder="When?" min={today} required/>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-calendar-alt"></i>
                                     </span>

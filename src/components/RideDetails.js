@@ -74,16 +74,17 @@ class RideDetails extends React.Component {
         return(
             <>
                 <section class="section has-background-primary-light">
+
                     <div class="container columns">
                         <div class="column mobile"></div>
+                        
                         <div class="column is-half ride-details">
                             <article class="has-background-white">
                                 
                                 <div class="top-ride columns">
-                                <a href={`/users/${theUser._id}`} class="column is-half title pt-3"> <img src={theUser.imageUrl} alt="img" style={{height:40, width:40, borderRadius:50}}  /> {theUser.username}  </a>
-                                <div class="column mobile"></div>
-                                <a href={`/users/${theUser._id}`} class="column"> <img src='/languages.png' style={{height:50, width:50}} alt="contact"/> </a> 
-                                
+                                    <a href={`/users/${theUser._id}`} class="column is-half title pt-3"> <img src={theUser.imageUrl} alt="img" style={{height:40, width:40, borderRadius:50}}  /> {theUser.username}  </a>
+                                    <div class="column mobile"> </div>
+                                    <a href={`/users/${theUser._id}`} class="column"> <img src='/languages.png' style={{height:50, width:50}} alt="contact"/> </a> 
                                 </div>
                                     
                                 <div class="content-ride pl-5 pr-5"> 
@@ -121,7 +122,8 @@ class RideDetails extends React.Component {
                     </div>
                     
 
-                    <StormGlass lat={this.state.lat} long={this.state.long} />
+                    {/* <StormGlass lat={this.state.lat} long={this.state.long} /> */}
+
                 </section>
             
             </>

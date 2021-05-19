@@ -23,21 +23,36 @@
   } 
  }  */
 
-@media (max-width:  768px) { 
+/* @media (max-width:  500px) {
+  .rides-info {width: 280px !important;}
+
+ } */
+
+
+@media (max-width:  767px) { 
   .search-btn { margin-top: 20px; } 
   .login {padding-top:30px}
   .login-form {padding: 0 20px 0 20px}
   .mobile { display: none !important}
-  .rides-info {width: 300px !important; text-align:center !important; margin: 10px 20px !important}
+  .home-info { display: flex !important; flex-direction: column !important; align-items: center !important; }
+  .media-content{ margin: 15px 0 ;}
+  .rides-info {display: flex !important; flex-direction: column !important; align-items: center !important; margin: 10px 20px !important}
+  .review-container { margin-top: 30px !important; display: flex !important; flex-direction: column !important; align-items: center !important; }
 }
 
 @media (max-width:1024px){
   .auth-buttons { display: flex !important; justify-content: center !important; margin: 20px 0;}
   .nav-list{ display: none}
+  .ipad{ display: none !important}
+  .rides-info{ margin: 0 90px;}
+}
+
+@media (min-width:1024px){
+  .rides-info{ width:550px !important;}
 }
 
 .header-title{
-  font-size: 2.5rem !important;
+  font-size: 2.8rem !important;
   color: white !important;
 }
 
@@ -71,7 +86,7 @@
   border-radius: 20px !important;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding-top: 20px !important;
-  width:550px;
+  /* width:550px; */
 }
 
 .user-cont{
@@ -146,7 +161,7 @@
   border-radius: 20px !important;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex !important;
-  flex-direction: row !important;
+  flex-direction: row ;
   justify-content: center;
 }
 
@@ -181,4 +196,8 @@
 
 .nav-list{
   margin-top: 10px !important;
+}
+
+.about-section{
+  text-align: start !important;
 }

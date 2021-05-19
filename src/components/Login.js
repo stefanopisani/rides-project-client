@@ -36,7 +36,7 @@ class Login extends React.Component{
         const {username, password} = this.state;
         return(
             <>
-            <div class="columns login">
+            <div class="columns login has-background-primary-light">
             <div class="column"></div>
             <div class="column login-form">
             <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">

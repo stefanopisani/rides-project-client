@@ -49,7 +49,7 @@ class Home extends React.Component {
                         
                             <form class="columns" onSubmit={this.handleFormSubmit}>
                                 <input  style={{fontFamily:'Montserrat'}} name="searchKeyword" onChange={this.handleChange} value={this.state.searchKeyword} class="input is-primary is-large mr-4" type="text" placeholder="Where to? 📍 🏄🏻‍♂️  🌊" />
-                                <button class="button is-primary is-large search-btn" type="submit"> <strong> Search </strong> </button>
+                                <button style={{fontFamily:'Montserrat'}} class="button is-primary is-large search-btn" type="submit"> <strong> Search </strong> </button>
                                 
                             </form>
                         
@@ -78,7 +78,7 @@ class Home extends React.Component {
                                         <div class="content">
                                             <h1 class="title is-size-4">Share the costs of your Ride</h1>
                                             <p class="is-size-5">
-                                                Your next journey to the surf spot will be much more convenient if you share the tolls/gas with new friends! <br/> <span class="emoticon">ᕕ( ᐛ )ᕗ</span>
+                                                Your next journey to the surf spot will be much more convenient if you share the tolls/gas with new friends! <br/> <span class="emoticon">٩(^ᴗ^)۶</span>
                                             </p>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@ class Home extends React.Component {
                                         <div class="content">
                                             <h1 class="title is-size-4"> Meet new friends </h1>
                                             <p class="is-size-5">
-                                                What's better then sharing a journey to make new friends? Feel more part of the community and meet more people like you <br/> <span class="emoticon">٩(^ᴗ^)۶</span>
+                                                What's better then sharing a journey to make new friends? Feel more part of the community and meet more people like you <br/> <span class="emoticon">ᕕ( ᐛ )ᕗ</span>
                                             </p>
                                         </div>
                                     </div>

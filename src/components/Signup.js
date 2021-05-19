@@ -47,9 +47,9 @@ class Signup extends React.Component{
         const {username, password, email, bio, phoneNumber} = this.state;
         return(
             <>
-            <div class="columns">
+            <div class="columns has-background-primary-light p-3">
                 <div class="column"> </div>
-                <div class="column"> 
+                <div class="column m-5"> 
                     <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
                         <div class="field">
                             <label class="label">Username</label>
@@ -96,10 +96,10 @@ class Signup extends React.Component{
                         <div class="field mb-5">
                             <label class="label">Bio</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="text" onChange={this.handleChange} name="bio" value={bio} placeholder="#something about yourself" />
-                                    <span class="icon is-small is-left">
+                                <textarea class="textarea is-primary" type="text" onChange={this.handleChange} name="bio" value={bio} placeholder="#something about yourself" rows="5"></textarea>
+                                    {/* <span class="icon is-small is-left">
                                         <i class="fas fa-comment"></i>
-                                    </span>
+                                    </span> */}
                             </div>
                         </div>
 

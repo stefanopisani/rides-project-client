@@ -70,40 +70,44 @@ class ListRides extends React.Component{
 
 
             {this.state.filteredRides.map((ride)=> {
+                {/* const today = new Date().toISOString().split("T")[0]; */}
                 return(
+                    
                     <>
+                    {/* {ride.date >= today && */}
                     <section className="has-background-primary-light"> 
+                        
                         <div className="columns"> 
-                            <div class="column mobile"> </div>
+                            <div class="column mobile ipad"> </div>
 
                             <div class="column">
-                            <article class="media notification has-background-white rides-info mt-3 mb-3">
+                                <article class="media notification has-background-white rides-info mt-3 mb-3  is-justify-content-center">
 
-                                <figure class="media-left user-cont">
-                                    <img src={ride.user.imageUrl} alt="" style={{width:"30px", height:"30px", borderRadius:"50px", border:'0.5px solid hsl(171, 100%, 41%)'}} class="user-pic"/> 
-                                    <p class="is-justify-content-center user-par"> <strong> {ride.user.username} </strong>  </p>
-                                </figure>
+                                    <figure class="media-left user-cont">
+                                        <img src={ride.user.imageUrl} alt="" style={{width:"30px", height:"30px", borderRadius:"50px", border:'0.5px solid hsl(171, 100%, 41%)'}} class="user-pic"/> 
+                                        <p class="is-justify-content-center user-par"> <strong> {ride.user.username} </strong>  </p>
+                                    </figure>
 
-                                <div class="media-content">
-                                    <div class="content">
+                                    <div class="media-content">
                                         <h3 key={ride._id} class="title is-size-4"> <NavLink exact to={`/rides/${ride._id}`}> {ride.departure.charAt(0).toUpperCase() + ride.departure.substr(1)} - {ride.arrival.charAt(0).toUpperCase()+ ride.arrival.substr(1)} </NavLink>  </h3>
-                                        <p class="is-size-5">
-                                        {ride.date} at {ride.time} {ride.user.username === this.state.user &&  (<NavLink exact to={`/rides/${ride._id}/edit`}> <i class="fas has-text-light fa-edit ml-3"> </i> </NavLink>)  }
-                                        
+                                        <p class="subtitle is-size-5">
+                                        {ride.date} at {ride.time} 
                                         </p>
                                     </div>
-                                </div>
-                                 
-                                <NavLink class="button is-primary is-outlined is-small ml-4 info-btn" exact to={`/rides/${ride._id}`}> <strong> i </strong> </NavLink> 
-                            </article>
-                                 
+
+                                    <div className="media-buttons"> 
+                                        {ride.user.username === this.state.user &&  ( <NavLink exact to={`/rides/${ride._id}/edit`}> <i class="fas has-text-light fa-edit mt-2"></i> </NavLink>  )  }
+                                        <NavLink class="button is-primary is-outlined is-small ml-4 info-btn" exact to={`/rides/${ride._id}`}> <strong> i </strong> </NavLink> 
+                                    </div>
+
+                                </article>   
                             </div>
 
-                            <div class="column mobile"> </div>
+                            <div class="column mobile ipad"> </div>
                         </div>
+
                     </section>
-                        
-                        
+                  {/* } */}
                     </>
                 )
             })}

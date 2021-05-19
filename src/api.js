@@ -4,10 +4,13 @@ const baseUrl = `${process.env.REACT_APP_PROJECTS_API}/api`;
 export const getAllrides= () => {
     return axios.get(`${baseUrl}/rides`);
 }
+export const getAllUserRides= (userId) => {
+    return axios.get(`${baseUrl}/rides/user/${userId}`);
+}
 
 export const getRide = (id) => {
     return axios.get(`${baseUrl}/rides/${id}`);
-}
+}   
 
 export const getUser = (id) => {
     return axios.get(`${baseUrl}/users/${id}`);
