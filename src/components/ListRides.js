@@ -68,13 +68,10 @@ class ListRides extends React.Component{
                 </div>
             </section>
 
-
+            <div className="py-5 has-background-primary-light"> 
             {this.state.filteredRides.map((ride)=> {
-                {/* const today = new Date().toISOString().split("T")[0]; */}
                 return(
-                    
                     <>
-                    {/* {ride.date >= today && */}
                     <section className="has-background-primary-light"> 
                         
                         <div className="columns"> 
@@ -84,8 +81,8 @@ class ListRides extends React.Component{
                                 <article class="media notification has-background-white rides-info mt-3 mb-3  is-justify-content-center">
 
                                     <figure class="media-left user-cont">
-                                        <img src={ride.user.imageUrl} alt="" style={{width:"30px", height:"30px", borderRadius:"50px", border:'0.5px solid hsl(171, 100%, 41%)'}} class="user-pic"/> 
-                                        <p class="is-justify-content-center user-par"> <strong> {ride.user.username} </strong>  </p>
+                                        <img src={ride.user.imageUrl} alt="" style={{width:"40px", height:"40px", borderRadius:"50px", border:'0.5px solid hsl(171, 100%, 41%)'}} class="user-pic"/> 
+                                        <NavLink to={`/users/${ride.user._id}`} class="navLink is-justify-content-center user-par has-text-primary is-size-5"> <strong> {ride.user.username} </strong>  </NavLink>
                                     </figure>
 
                                     <div class="media-content">
@@ -96,7 +93,7 @@ class ListRides extends React.Component{
                                     </div>
 
                                     <div className="media-buttons"> 
-                                        {ride.user.username === this.state.user &&  ( <NavLink exact to={`/rides/${ride._id}/edit`}> <i class="fas has-text-light fa-edit mt-2"></i> </NavLink>  )  }
+                                        {/* {ride.user.username === this.state.user &&  ( <NavLink exact to={`/rides/${ride._id}/edit`}> <i class="fas has-text-light fa-edit"></i> </NavLink>  )  } */}
                                         <NavLink class="button is-primary is-outlined is-small ml-4 info-btn" exact to={`/rides/${ride._id}`}> <strong> i </strong> </NavLink> 
                                     </div>
 
@@ -107,12 +104,11 @@ class ListRides extends React.Component{
                         </div>
 
                     </section>
-                  {/* } */}
                     </>
                 )
             })}
                 
-            
+            </div>
             </>
         )
     }
@@ -121,18 +117,18 @@ class ListRides extends React.Component{
 export default ListRides;
 
 
-{/* <article class="media notification has-background-white home-info">
-    <figure class="media-left">
-        <span class="icon is-medium">
-        <img src={ride.user.imageUrl} alt="" width="50" height="50"/>
-        </span>
-    </figure>
-    <div class="media-content">
-        <div class="content">
-            <h3 key={ride._id} class="title is-size-4"> <NavLink exact to={`/rides/${ride._id}`}> {ride.departure} - {ride.arrival} </NavLink> </h3>
-            <p class="is-size-5">
-            {ride.user.username}
-            </p>
-        </div>
-    </div>
-</article> */}
+// {/* <article class="media notification has-background-white home-info">
+//     <figure class="media-left">
+//         <span class="icon is-medium">
+//         <img src={ride.user.imageUrl} alt="" width="50" height="50"/>
+//         </span>
+//     </figure>
+//     <div class="media-content">
+//         <div class="content">
+//             <h3 key={ride._id} class="title is-size-4"> <NavLink exact to={`/rides/${ride._id}`}> {ride.departure} - {ride.arrival} </NavLink> </h3>
+//             <p class="is-size-5">
+//             {ride.user.username}
+//             </p>
+//         </div>
+//     </div>
+// </article> */}

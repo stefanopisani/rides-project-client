@@ -138,7 +138,7 @@ class Home extends React.Component {
                         </div>
                     </div>
             
-                    <button class="button is-primary is-large home-final-button" style={{fontFamily:'Montserrat'}}> <strong> Learn More </strong>  </button>
+                    <a href="/about" class="button is-primary is-medium home-final-button" style={{fontFamily:'Montserrat'}}> <strong> Learn More </strong>  </a>
                 </section>
             
             </>

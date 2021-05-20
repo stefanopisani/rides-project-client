@@ -82,18 +82,18 @@ class RideDetails extends React.Component {
                             <article class="has-background-white">
                                 
                                 <div class="top-ride columns">
-                                    <a href={`/users/${theUser._id}`} class="column is-half title pt-3"> <img src={theUser.imageUrl} alt="img" style={{height:40, width:40, borderRadius:50}}  /> {theUser.username}  </a>
+                                    <a href={`/users/${theUser._id}`} class="column is-half title pt-3 has-text-primary name-ride-details"> <img src={theUser.imageUrl} alt="img" style={{height:40, width:40, borderRadius:50}}  /> {theUser.username}  </a>
                                     <div class="column mobile"> </div>
-                                    <a href={`/users/${theUser._id}`} class="column"> <img src='/languages.png' style={{height:50, width:50}} alt="contact"/> </a> 
+                                    <a href={`/users/${theUser._id}`} class="column"> <img src='/languages.png' style={{height:50, width:50}} alt="contact" class="mobile"/> </a> 
                                 </div>
                                     
                                 <div class="content-ride pl-5 pr-5"> 
-                                    <h2 className="title"> {departure.charAt(0).toUpperCase() + departure.substr(1)} - {arrival.charAt(0).toUpperCase() + arrival.substr(1)}    
+                                    <h2 className="title destination-ride-details"> {departure.charAt(0).toUpperCase() + departure.substr(1)} - {arrival.charAt(0).toUpperCase() + arrival.substr(1)}    
                                     
                                         {this.state.user=== theUser.username && (
                                         <>
-                                        <NavLink exact to={`/rides/${_id}/edit`}> <i class="fas has-text-light fa-edit ml-3"> </i> </NavLink>
-                                        <button class="button is-small is-outlined mt-1" onClick={() => this.handleDeleteRide(_id)}> 🗑 </button>
+                                        <NavLink exact to={`/rides/${_id}/edit`}> <i class="fas has-text-light fa-edit ml-3 mobile-img"> </i> </NavLink>
+                                        <button class="button is-small is-outlined mt-1 " onClick={() => this.handleDeleteRide(_id)}> 🗑 </button>
                                         <br/>
                                         </>
                                         )}
@@ -108,14 +108,15 @@ class RideDetails extends React.Component {
                                 
                                 
                                
-                                <a href={`/users/${theUser._id}`} className="button is-outlined is-primary m-3" > Get Ride 🤟🏻 </a>
+                                <a href={`/users/${theUser._id}`} className="button is-outlined is-primary m-3" > <strong> Get Ride 🤟🏻 </strong></a>
                                             
 
                                 <Weather location={arrival} lat={this.state.lat} long={this.state.long} />
 
-                                <a href={`https://magicseaweed.com/Spain-Portugal-Surf-Forecast/8/`} className="button is-outlined is-info mb-5" > Forecast </a>
-                                <a href={`https://beachcam.meo.pt/livecams`} className="button  is-info is-outlined mb-5 ml-3" > Webcam </a>
+                                <a href={`https://magicseaweed.com/Spain-Portugal-Surf-Forecast/8/`} className="button is-outlined is-info mb-5"  target="_blank"> Forecast </a>
+                                <a href={`https://beachcam.meo.pt/livecams`} className="button  is-info is-outlined mb-5 ml-3"  target="_blank" > Webcam </a>
                             </article>
+                            <a href="/rides" className="button is-primary is-small mt-5"> back </a>
                         </div>
 
                         <div class="column mobile"></div>

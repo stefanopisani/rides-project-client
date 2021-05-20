@@ -7,6 +7,13 @@
   box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
   height: 600px;
 }   
+.about-hero {
+  background: url('./images/surf1.jpg') center / cover;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+}   
+
+
+
 /* @media (max-width: 1200px) { .hero { background: url(/public/tesla.jpg) center / cover; } } 
 
 @media (max-width:  768px) { .hero { background: url(/public/tesla.jpg) center / cover; } } */
@@ -38,6 +45,13 @@
   .media-content{ margin: 15px 0 ;}
   .rides-info {display: flex !important; flex-direction: column !important; align-items: center !important; margin: 10px 20px !important}
   .review-container { margin-top: 30px !important; display: flex !important; flex-direction: column !important; align-items: center !important; }
+  .ft-cl-1 {padding-top: 20px !important;}
+  .ft-cl-2 {margin-top: -10px !important;}
+  .ft-cl-3 {margin-top: -20px !important;}
+  .mobile-text {font-size: 1rem !important;}
+  .mobile-img{width: 20px !important; height: 20px !important;}
+  .name-ride-details{ margin-top: 20px;}
+  .destination-ride-details{ margin-top: -35px !important;}
 }
 
 @media (max-width:1024px){
@@ -48,7 +62,11 @@
 }
 
 @media (min-width:1024px){
-  .rides-info{ width:550px !important;}
+  .rides-info{ width:650px !important;}
+}
+@media (min-width:1450px){
+  .add-review{height:750px !important;}
+  .login {height:750px !important;}
 }
 
 .header-title{
@@ -71,7 +89,7 @@
 }
 
 .login{
- height:500px;
+ height:550px;
  padding-top: 100px;
 }
 
@@ -80,6 +98,19 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding-top: 20px !important;
   width:450px;
+}
+
+.about-content{
+  border-radius: 20px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  padding: 20px 15px !important;
+}
+
+.about-cont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .rides-info {
@@ -98,25 +129,6 @@
 .user-par{
   margin-left:10px;
 }
-
-
-.ft-logo{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.ft-logo img{
-  padding-bottom: 10px;
-}
-.ft-logo h1{
-  font-size: 1.5rem;
-}
-
-/* .ft-content {
-  font-size: 2rem;
-} */
 
 .info-btn{
   border-radius: 10px !important;
@@ -188,7 +200,6 @@
   color: rgb(86, 86, 86);
 }
 #nav-brand-img{
-  height:30px;
   width:auto;
   margin-left: 15px;
   margin-top: 10px;
@@ -200,4 +211,49 @@
 
 .about-section{
   text-align: start !important;
+}
+
+.navLink{
+  text-decoration: none !important;
+  color: rgb(64, 64, 64);
+}
+
+footer{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100% !important;
+  margin-top: 11px;
+}
+ .ft-logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ft-logo img{
+  padding-bottom: 10px;
+}
+.ft-logo h1{
+  font-size: 1.5rem;
+} 
+.ft-content {
+  margin-top: 10px;
+  text-align: center;
+} 
+
+
+nav{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* .ft-cl-1{
+  border: 1px solid black;
+} */
+.lg-ft{
+  width: 25px !important;
+  height: 25px !important;
+  text-decoration: none !important;
+}
+
+.add-review{
+  height:550px;
 }

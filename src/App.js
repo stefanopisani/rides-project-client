@@ -16,6 +16,7 @@ import Weather from './components/Weather';
 import Home from './components/Home';
 import PrivateRoute from './components/PrivatRoute';
 import Footer from './components/Footer';
+import About from './components/About';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -44,11 +45,15 @@ class App extends React.Component {
   render(){
     const{loggedInUser} = this.state;
     return (
-      <div className="App">
-        <ToastContainer />
-        <Navbar loggedInUser={loggedInUser} setCurrentUser={this.setCurrentUser}/>
+      <>
+      
+      <ToastContainer />
+      <Navbar loggedInUser={loggedInUser} setCurrentUser={this.setCurrentUser}/>
+      
+      <div className="App body">
         <Switch> 
           <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/rides" render={(props) => <ListRides {...props} user={loggedInUser}/> } />
           <PrivateRoute exact path="/rides/add" render={(props) => <AddRide {...props} user={loggedInUser} />} />
           <Route exact path="/rides/:id" render={(props) => <RideDetails {...props} user={loggedInUser} />} />
@@ -60,8 +65,10 @@ class App extends React.Component {
           <PrivateRoute exact path="/reviews/:id/add" render={(props) => <AddReview {...props} user={loggedInUser} />} />
           {/* <Route exact path="/login-google" component={()=> {window.location.href= `${process.env.REACT_APP_PROJECTS_API}/api/auth/google`;}} /> */}
         </Switch>
-        <Footer />
       </div>
+      
+      <Footer />
+      </>
     );
   }
 }

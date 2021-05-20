@@ -19,28 +19,29 @@ function Navbar({loggedInUser, setCurrentUser}) {
     
         <div class="container-fluid">
 
-            <a class="navbar-brand navbar-item" id="nav-brand" href="/"> Rides <img id="nav-brand-img" src="/map.png"/> </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+          <a class="navbar-brand navbar-item" id="nav-brand" href="/"> Rides <img id="nav-brand-img" src="/map.png"/> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-list">
                 <li class="nav-item navbar-item">
-                <a class="nav-link active" aria-current="page" href="#"> About </a>
+                <a class="nav-link" aria-current="page" href="/about"> About </a>
                 </li>
 
                 <li class="nav-item navbar-item">
-                <a class="nav-link" href="#"> Contact </a>
+                <a class="nav-link" href="/rides"> Let's go 🤟🏻 </a>
                 </li>
             </ul>
 
             <form class="d-flex auth-buttons"> 
-            <figure class="image mt-2">
-                  <NavLink exact to= {`/users/${loggedInUser._id}`} > 
-                    <img src={loggedInUser.imageUrl} style={{height:40, width:40, borderRadius:50}} alt=""/>  
-                  </NavLink>
-                </figure>           
+              <figure class="image mt-2">
+                <NavLink exact to= {`/users/${loggedInUser._id}`} > 
+                  <img src={loggedInUser.imageUrl} style={{height:40, width:40, borderRadius:50}} alt=""/>  
+                </NavLink>
+              </figure>  
+
               <div class="navbar-item">
                 <div class="buttons">   
                   <NavLink class="button is-primary mr-3" exact to="/rides/add">
@@ -53,7 +54,7 @@ function Navbar({loggedInUser, setCurrentUser}) {
               </div>
             </form>
 
-            </div>
+          </div>
         </div>
       </nav>
       </>
@@ -71,11 +72,11 @@ function Navbar({loggedInUser, setCurrentUser}) {
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-list">
                   <li class="nav-item navbar-item">
-                  <a class="nav-link" aria-current="page" href="#"> About </a>
+                  <a class="nav-link" aria-current="page" href="/about"> About </a>
                   </li>
 
                   <li class="nav-item navbar-item">
-                  <a class="nav-link" href="#"> Contact </a>
+                  <a class="nav-link" href="/rides"> Let's go 🤟🏻 </a>
                   </li>
               </ul>
 

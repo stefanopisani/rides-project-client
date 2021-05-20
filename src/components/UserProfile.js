@@ -55,8 +55,8 @@ class UserProfile extends React.Component {
                 
                 <div className="column is-half user-profile-content"> 
                     <h2 className="title"> <img src={imageUrl} alt="" style={{width:60, height:60, borderRadius:50, marginRight:10}} /> {username} { username === user && <NavLink to={`/users/${_id}/edit`} > <i class="fas has-text-grey fa-edit ml-5"> </i> </NavLink> }  </h2>
-                    <h2 className="subtitle mt-1"> ✉️ {email} </h2>
-                    <h2 className="subtitle mt-1"> ☎️ {phoneNumber}</h2>
+                    <a href={`mailto:${email}`} className="subtitle mt-1 mobile-text"> ✉️ {email} </a>
+                    <a href={`tel:${phoneNumber}`} className="subtitle mt-1"> ☎️ {phoneNumber}</a>
                     <h2 className="subtitle mt-1 about-section"> About me - "{bio}" </h2>
                 </div>
                 <div className="column"> </div>
@@ -71,7 +71,7 @@ class UserProfile extends React.Component {
     
             <hr/> 
             <h3 class="review-title"> Reviews ✌🏻 </h3>
-            
+            {reviews.length === 0 && <h3 className="subtitle"> No reviews received yet </h3>}
             {reviews.map((review) => {
                 return(
                     <>
@@ -100,6 +100,7 @@ class UserProfile extends React.Component {
             <hr/> 
 
             <h3 class="review-title"> Rides 🤟🏻 </h3>
+            {rides.length === 0 && <h3 className="subtitle"> No rides added yet </h3>}
             {rides.map((ride) => {
                 return(
                     <>
@@ -107,7 +108,7 @@ class UserProfile extends React.Component {
                     <div className="column mobile"> </div>
                     
                     <div class="has-background-white review-container column is-half"> 
-                        <p class="mr-5"> <img src='/world.png' alt="" style={{width:40, height:40, marginRight:5}} /> <b> {ride.departure} - {ride.arrival} </b> - {ride.date} </p>
+                        <NavLink to={`/rides/${ride._id}`} class="mr-5 navLink"> <img src='/world.png' class="mobile-img" alt="" style={{width:40, height:40, marginRight:5}} /> <b> {ride.departure} - {ride.arrival} </b> {ride.date}  </NavLink>
                     </div>
                     <div className="column mobile"> </div>
                     </div>

@@ -38,7 +38,7 @@ class Login extends React.Component{
             <>
             <div class="columns login has-background-primary-light">
             <div class="column"></div>
-            <div class="column login-form">
+            <div class="column m-5 login-form">
             <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
                 <div class="field">
                 <label class="label">Username</label>
@@ -59,7 +59,7 @@ class Login extends React.Component{
                 <div class="control has-icons-left has-icons-right">
                 <input class="input" type="password" onChange={this.handleChange} name="password" value={password} required/>
                     <span class="icon is-small is-left">
-                    <i class="fas fa-tree"></i>
+                    <i class="fas fa-key"></i>
                     </span>
                     {/* <span class="icon is-small is-right">
                     <i class="fas fa-check"></i>
