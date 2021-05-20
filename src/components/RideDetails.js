@@ -113,10 +113,11 @@ class RideDetails extends React.Component {
 
                                 <Weather location={arrival} lat={this.state.lat} long={this.state.long} />
 
-                                <a href={`https://www.windguru.cz/map/?lat=${this.state.lat}&lon=${this.state.long}&zoom=12`} className="button is-outlined is-info mb-5"  target="_blank"> Forecast </a>
+                                
+                                <a href={`https://www.windguru.cz/map/?lat=${this.state.lat}&lon=${this.state.long}&zoom=12`} className="button is-outlined is-info mb-5"  target="_blank"> <b> Forecast  🌊 </b></a>
                                 {/* <a href={`https://beachcam.meo.pt/livecams`} className="button  is-info is-outlined mb-5 ml-3"  target="_blank" > Webcam </a> */}
                             </article>
-                            <a href="/rides" className="button is-primary is-small mt-5"> back </a>
+                            <a href="/rides" className="button is-primary is-outlined mt-5"> back </a>
                         </div>
 
                         <div class="column mobile"></div>

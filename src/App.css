@@ -188,7 +188,7 @@
 }
 
 .stars{
-  color: hsl(171, 100%, 41%);
+  color: #00d1b2;
 }
 
 #nav-boot{
@@ -197,12 +197,20 @@
 
 #nav-brand{
   font-size: 2rem !important;
-  color: rgb(86, 86, 86);
+  color: rgb(36, 36, 36);
+  margin-left: 10px !important;
 }
+
+#nav-brand:hover{
+  text-decoration: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 #nav-brand-img{
-  width:auto;
-  margin-left: 15px;
-  margin-top: 10px;
+  height: 50px !important;
+  /* margin-left: -20px !important; */
+  /* margin-top: 5px; */
 }
 
 .nav-list{

@@ -18,7 +18,7 @@ function Footer() {
                 <div className="column ft-cl-2">
                     <div class="ft-logo"> 
                         <h1 className="title is-size-3 mt-2"> <strong>Rides</strong> </h1>  
-                        <img src="/map.png" className="ml-3" width="50" height="50"/> 
+                        <img src="/logo2.png" className="ml-1" width="50" height="50"/> 
                     </div>
                 </div>
 

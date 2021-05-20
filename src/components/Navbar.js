@@ -19,7 +19,7 @@ function Navbar({loggedInUser, setCurrentUser}) {
     
         <div class="container-fluid">
 
-          <a class="navbar-brand navbar-item" id="nav-brand" href="/"> Rides <img id="nav-brand-img" src="/map.png"/> </a>
+        <a class="navbar-brand" id="nav-brand" href="/"> <img id="nav-brand-img" class="mr-3" src="/logo2.png"/> Rides  </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -64,7 +64,7 @@ function Navbar({loggedInUser, setCurrentUser}) {
     
           <div class="container-fluid">
 
-              <a class="navbar-brand navbar-item" id="nav-brand" href="/"> Rides <img id="nav-brand-img" src="/map.png"/> </a>
+              <a class="navbar-brand" id="nav-brand" href="/"> <img id="nav-brand-img" class="mr-3" src="/logo2.png"/> Rides  </a> 
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
               </button>
