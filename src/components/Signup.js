@@ -87,6 +87,7 @@ class Signup extends React.Component{
                             <label class="label">Password</label>
                             <div class="control has-icons-left has-icons-right">
                                 <input class="input" type="password" onChange={this.handleChange} name="password" value={password} required/>
+                                <p class="help is-grey is-size-7"> ❗️ must be +6 characters and contain a maiusc, a minusc, a number, and a special character  </p>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-key"></i>
                                     </span>
