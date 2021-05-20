@@ -52,7 +52,8 @@
   .mobile-img{width: 20px !important; height: 20px !important;}
   .name-ride-details{ margin-top: 20px;}
   .destination-ride-details{ margin-top: -35px !important;}
-  .header-title{margin: 0 !important;}
+  .header-title-about{padding: 0 !important;}
+  .header-title{padding-top: 50px !important;}
 }
 
 @media (max-width:1024px){
@@ -71,6 +72,10 @@
 }
 
 .header-title{
+  font-size: 2.8rem !important;
+  color: white !important;
+}
+.header-title-about{
   font-size: 2.8rem !important;
   color: white !important;
 }

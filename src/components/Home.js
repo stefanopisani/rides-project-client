@@ -36,7 +36,7 @@ class Home extends React.Component {
                 {/* <p class="subtitle">
                   Rides is a car pooling platform for surfers
                 </p> */}
-                <p class="title mb-6 header-title">
+                <p class="title mb-6 header-title mt-6">
                             Share a ride, <br/> Surf together.
                         </p>
             

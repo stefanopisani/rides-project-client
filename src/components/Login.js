@@ -26,7 +26,7 @@ class Login extends React.Component{
             this.props.setCurrentUser(response.data);
             this.props.history.push('/');
         } catch(e){
-            toast.error(' An error occurred, please try again')
+            toast.error(' Username or password wrong, please try again')
             console.log(e);
         }
         

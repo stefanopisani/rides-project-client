@@ -4,7 +4,7 @@ return(
     
     <section class="hero about-hero is-medium">
         <div class="hero-body">
-            <p class="title mt-6 header-title"> It's all about sharing <br/> your next ride </p>
+            <p class="title mt-6 header-title-about"> It's all about sharing <br/> your next ride </p>
         </div>
     </section>
 
