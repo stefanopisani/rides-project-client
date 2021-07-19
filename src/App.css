@@ -36,7 +36,7 @@
  } */
 
 
-@media (max-width:  767px) { 
+@media (max-width:  768px) { 
   .search-btn { margin-top: 20px; } 
   .login {padding-top:30px}
   .login-form {padding: 0 20px 0 20px}
@@ -254,7 +254,6 @@ footer{
   text-align: center;
 } 
 
-
 nav{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -270,4 +269,8 @@ nav{
 
 .add-review{
   height:550px;
+}
+
+.rides-list {
+  min-height: 500px;
 }

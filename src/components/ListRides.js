@@ -68,7 +68,7 @@ class ListRides extends React.Component{
                 </div>
             </section>
 
-            <div className="py-5 has-background-primary-light"> 
+            <div className="py-5 has-background-primary-light rides-list"> 
             {this.state.filteredRides.map((ride)=> {
                 return(
                     <>
