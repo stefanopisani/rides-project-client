@@ -82,6 +82,7 @@ class ListRides extends React.Component{
 
                                     <figure class="media-left user-cont">
                                         <img src={ride.user.imageUrl} alt="" style={{width:"40px", height:"40px", borderRadius:"50px", border:'0.5px solid hsl(171, 100%, 41%)'}} class="user-pic"/> 
+                                        {console.log(ride.user.imageUrl)}
                                         <NavLink to={`/users/${ride.user._id}`} class="navLink is-justify-content-center user-par has-text-primary is-size-5"> <strong> {ride.user.username} </strong>  </NavLink>
                                     </figure>
 
