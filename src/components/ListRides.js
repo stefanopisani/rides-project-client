@@ -70,7 +70,8 @@ class ListRides extends React.Component{
 
             <div className="py-5 has-background-primary-light rides-list"> 
             {this.state.filteredRides.map((ride)=> {
-                return(
+
+                return ride.user && (
                     <>
                     <section className="has-background-primary-light"> 
                         
@@ -81,8 +82,10 @@ class ListRides extends React.Component{
                                 <article class="media notification has-background-white rides-info mt-3 mb-3  is-justify-content-center">
 
                                     <figure class="media-left user-cont">
-                                        <img src={`${ride.user.imageUrl}`} alt="" style={{width:"40px", height:"40px", borderRadius:"50px", border:'0.5px solid hsl(171, 100%, 41%)'}} class="user-pic"/> 
+                                        {console.log(ride)}
+                                        {console.log(ride.user)}
                                         {console.log(ride.user.imageUrl)}
+                                        <img src={ride.user.imageUrl} alt="" style={{width:"40px", height:"40px", borderRadius:"50px", border:'0.5px solid hsl(171, 100%, 41%)'}} class="user-pic"/> 
                                         <NavLink to={`/users/${ride.user._id}`} class="navLink is-justify-content-center user-par has-text-primary is-size-5"> <strong> {ride.user.username} </strong>  </NavLink>
                                     </figure>
 
@@ -94,7 +97,7 @@ class ListRides extends React.Component{
                                     </div>
 
                                     <div className="media-buttons"> 
-                                        {/* {ride.user.username === this.state.user &&  ( <NavLink exact to={`/rides/${ride._id}/edit`}> <i class="fas has-text-light fa-edit"></i> </NavLink>  )  } */}
+                                        {ride.user.username === this.state.user &&  ( <NavLink exact to={`/rides/${ride._id}/edit`}> <i class="fas has-text-light fa-edit"></i> </NavLink>  )  }
                                         <NavLink class="button is-primary is-outlined is-small ml-4 info-btn" exact to={`/rides/${ride._id}`}> <strong> i </strong> </NavLink> 
                                     </div>
 
